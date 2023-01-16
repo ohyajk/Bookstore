@@ -137,7 +137,7 @@ Contributions are welcome...
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Give a star to show support.
+> Give a star to show support...
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
