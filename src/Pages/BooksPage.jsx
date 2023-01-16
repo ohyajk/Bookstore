@@ -1,7 +1,9 @@
+import React from "react";
+
 const BooksPage = () => {
   return (
-    <div>BooksPage</div>
+    <div>BooksPage 123</div>
   )
 }
 
-export default BooksPage
+export default BooksPage;
