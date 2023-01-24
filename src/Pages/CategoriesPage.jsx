@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { checkStatus } from '../redux/categories.js/categories';
+import { checkStatus } from '../redux/categories/categories';
 
 const CategoriesPage = () => {
   const dispatch = useDispatch();
