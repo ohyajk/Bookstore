@@ -1,5 +1,5 @@
-/* eslint react/prop-types: 0 */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/books';
 
@@ -14,6 +14,12 @@ const Book = ({ title, author, id }) => {
       <button onClick={() => dispatch(removeBook(id))} type="button" className="border-2 border-fuchsia-500 p-2 cursor-pointer rounded-lg">Remove</button>
     </div>
   );
+};
+
+Book.propTypes = {
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default Book;
