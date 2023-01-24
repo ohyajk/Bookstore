@@ -11,7 +11,7 @@ export const removeBook = (payload) => ({
   id: payload,
 });
 
-const bookRed = (state = [], action) => {
+const bookRed = (state = [{ title: 'book1', author: 'author1', id: 'id1' }, { title: 'book2', author: 'author2', id: 'id2' }], action) => {
   switch (action.type) {
     case ADD:
       return [...state, action.payload];
