@@ -1,22 +1,47 @@
-const ADD = 'bookstore/books/ADD_BOOK';
-const REMOVE = 'bookstore/books/REMOVE_BOOK';
+import { sendData, deleteData, getData } from './fetchBooks';
 
-export const addBook = (payload) => ({
-  type: ADD,
+const ADD = 'bookStore/books/ADD_BOOK';
+const REMOVE = 'bookStore/books/REMOVE_BOOK';
+const FETCH_BOOKS = 'bookStore/books/FETCH_BOOKS';
+
+const URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/sbGl1TCfNFEAEVgcqoPo/books';
+
+export const fetchBooks = (payload) => ({
+  type: FETCH_BOOKS,
   payload,
 });
 
-export const removeBook = (payload) => ({
-  type: REMOVE,
-  id: payload,
-});
+export const addBook = (payload) => async (dispatch) => {
+  await sendData(URL, payload);
+  return dispatch({ type: ADD, payload });
+};
 
-const bookRed = (state = [{ title: 'book1', author: 'author1', id: 'id1' }, { title: 'book2', author: 'author2', id: 'id2' }], action) => {
+export const removeBook = (index) => async (dispatch) => {
+  await deleteData(URL, index);
+  return dispatch({ type: REMOVE, payload: index });
+};
+
+export const displayBooks = () => async (dispatch) => {
+  const books = await getData(URL);
+  const bookArr = [];
+  Object.keys(books).forEach((id) => {
+    bookArr.push({
+      item_id: id,
+      title: books[id][0].title,
+      author: books[id][0].author,
+    });
+  });
+  dispatch(fetchBooks(bookArr));
+};
+
+const bookRed = (state = [], action) => {
   switch (action.type) {
     case ADD:
       return [...state, action.payload];
     case REMOVE:
-      return state.filter((book) => book.id !== action.id);
+      return state.filter((book) => book.item_id !== action.payload);
+    case FETCH_BOOKS:
+      return action.payload;
     default:
       return state;
   }
