@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 
 const Navbar = () => (
-  <div className="shadow-md shadow-white/30 flex justify-between items-center px-[10vh] py-4">
+  <div className="border border-b-black/10 flex gap-16 items-center px-[10vh] py-4 bg-white">
     <nav>
-      <h1 className="logo text-4xl font-semibold text-fuchsia-500">JK`&apos;`s BOOKSTORE</h1>
+      <h1 className="text-4xl font-semibold text-[#0290ff]">BOOKSTORE CMS</h1>
     </nav>
     <ul className="flex gap-4">
       <Link to="/">BOOKS</Link>

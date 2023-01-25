@@ -6,12 +6,16 @@ import { removeBook } from '../redux/books/books';
 const Book = ({ title, author, id }) => {
   const dispatch = useDispatch();
   return (
-    <div className="flex w-[500px] justify-between items-center border-2 border-white/30 p-2 rounded-lg shadow-md">
-      <div>
+    <div className="flex my-8 mx-8 justify-between items-center border-2 border-white/30 p-2 rounded-lg shadow-md">
+      <div className="flex flex-col">
         <h4 className="text-2xl">{title}</h4>
-        <p>{author}</p>
+        <p className="text-[#0290ff]">{author}</p>
+        <div className="py-2">
+          <button type="button" className="text-[#0290ff] pr-2 cursor-pointer ">Comments</button>
+          <button onClick={() => dispatch(removeBook(id))} type="button" className="text-[#0290ff] pr-2 cursor-pointer ">Remove</button>
+          <button type="button" className="text-[#0290ff] pr-2 cursor-pointer ">Edit</button>
+        </div>
       </div>
-      <button onClick={() => dispatch(removeBook(id))} type="button" className="border-2 border-fuchsia-500 p-2 cursor-pointer rounded-lg">Remove</button>
     </div>
   );
 };
