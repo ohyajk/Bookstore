@@ -12,8 +12,7 @@ const BooksList = () => {
   }, []);
 
   return (
-    <div className="py-10">
-      <h2 className="text-4xl font-bold py-4">Your Books List</h2>
+    <div className="py-10 w-[100%] border-b">
       {list.map((book) => (
         <Book title={book.title} author={book.author} key={book.item_id} id={book.item_id} />
       ))}
