@@ -9,7 +9,7 @@ const Book = ({ title, author, id }) => {
     <div className="flex my-8 mx-8 justify-between items-center border-2 border-white/30 p-2 rounded-lg shadow-md">
       <div className="flex flex-col">
         <h6 className="opacity-50">Novel</h6>
-        <h4 className="text-2xl">{title}</h4>
+        <h4 className="text-2xl font-semibold">{title}</h4>
         <p className="text-[#0290ff]">{author}</p>
         <div className="py-2">
           <button type="button" className="text-[#0290ff] pr-2 cursor-pointer ">Comments</button>
