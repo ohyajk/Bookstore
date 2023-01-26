@@ -42,9 +42,9 @@ REQUIRED SECTIONS:
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Math Magicians 🪄🔮🧝 <a name="about-project"></a>
+# 📖 BookStore 🪄🔮🧝 <a name="about-project"></a>
 
-> It is a Calculator App made with React.
+> It is a Book store App made with React.
 
 ## 🛠 Built With <a name="built-with"></a>
 
