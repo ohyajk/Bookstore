@@ -14,7 +14,8 @@ const AddBookForm = () => {
   };
   const myTime = Date.now();
   return (
-    <div className="w-[100%] my-8 px-8  ">
+    <div className="w-[100%] my-8 px-8">
+      <h2 className="opacity-50 font-semibold text-2xl py-4">Add New Book</h2>
       <form onSubmit={add} className="flex flex-grow justify-between gap-8 ">
         <input name="title" className="p-2 border border-black/20 w-full text-black outline-none " type="text" placeholder="Book Title" onChange={(e) => setBook({ ...book, title: e.target.value })} required />
         <input name="author" className="p-2 border border-black/20 w-full text-black outline-none " type="text" placeholder="Book Author" onChange={(e) => setBook({ ...book, author: e.target.value })} required />
